@@ -17,7 +17,7 @@ class TriangleTest {
     }
 
     @Test
-    public void when0and40and04Then8() {
+    public void when01and01and02ThenM1() {
         Point a = new Point(0, 1);
         Point b = new Point(0, 1);
         Point c = new Point(0, 2);
