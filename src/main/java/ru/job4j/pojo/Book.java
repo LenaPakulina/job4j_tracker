@@ -1,8 +1,13 @@
 package ru.job4j.pojo;
 
 public class Book {
-    private String name = "Unknown";
-    private int pagesCount = 500;
+    private String name;
+    private int pagesCount;
+
+    public Book(String name, int count) {
+        this.name = name;
+        this.pagesCount = count;
+    }
 
     public String getName() {
         return name;
