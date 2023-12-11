@@ -15,7 +15,7 @@ public class Matches {
             if (matches >= 1 && matches <= 3 && matches <= count) {
                 turn = !turn;
                 count -= matches;
-                System.out.println(String.format("В игре осталось %d спичек", count));
+                System.out.printf("В игре осталось %d спичек%n", count);
             } else {
                 System.out.println("Введено некорректное число или число, превышающее имеющиеся кол-во спичек.");
             }
