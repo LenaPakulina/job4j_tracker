@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertNull;
 
 class StartUITest {
     @Test
@@ -51,6 +50,6 @@ class StartUITest {
         String[] answers = {String.valueOf(id)};
         StartUI.deleteItem(new MockInput(answers), tracker);
         Item edited = tracker.findById(id);
-        assertNull(edited);
+        assertThat(edited).isNull();
     }
 }
