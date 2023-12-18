@@ -5,11 +5,11 @@ public class Factorial {
         if (number < 0) {
             throw new IllegalArgumentException("Number could not be less than 0");
         }
-        int result = 1;
+        int answer = 1;
         for (int index = 2; index <= number; index++) {
-            result *= index;
+            answer *= index;
         }
-        return result;
+        return answer;
     }
 
     public static void main(String[] args) {
