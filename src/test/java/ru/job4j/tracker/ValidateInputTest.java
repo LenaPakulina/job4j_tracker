@@ -29,15 +29,16 @@ class ValidateInputTest {
     @Test
     void whenValidMixInput() {
         Output output = new StubOutput();
-        String[] strs = new String[] {"67", "68", "69"};
         Input in = new MockInput(
-                strs
+                new String[] {"67", "68", "69"}
         );
         ValidateInput input = new ValidateInput(output, in);
-        for (int i = 0; i < strs.length; i++) {
-            int selected = input.askInt("Enter menu:");
-            assertThat(selected).isEqualTo(67 + i);
-        }
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(67);
+        selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(68);
+        selected = input.askInt("Enter menu:");
+        assertThat(selected).isEqualTo(69);
     }
 
     @Test
