@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.util.Arrays;
+import java.util.List;
 
 public final class SingleTracker {
     private static Tracker tracker = new Tracker();
@@ -24,11 +25,11 @@ public final class SingleTracker {
         return tracker.findById(id);
     }
 
-    public Item[] findAll() {
+    public List<Item> findAll() {
         return tracker.findAll();
     }
 
-    public Item[] findByName(String key) {
+    public List<Item> findByName(String key) {
         return tracker.findByName(key);
     }
 
@@ -45,6 +46,6 @@ public final class SingleTracker {
         sglTracker.add(new Item("sdfsdf"));
         sglTracker.add(new Item("sdfsdf"));
         sglTracker.add(new Item("sdfsdf"));
-        System.out.println("Size = " + sglTracker.findAll().length);
+        System.out.println("Size = " + sglTracker.findAll().size());
     }
 }
