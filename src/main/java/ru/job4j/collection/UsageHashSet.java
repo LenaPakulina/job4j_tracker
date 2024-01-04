@@ -11,6 +11,8 @@ public class UsageHashSet {
         autos.add("Toyota");
         autos.add("WBM");
         autos.add("volvo");
+        autos.add("Lada");
+        autos.add("BMW");
         for (String auto : autos) {
             System.out.println(auto);
         }
