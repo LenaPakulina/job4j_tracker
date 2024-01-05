@@ -7,12 +7,8 @@ public class AnalyzeByMap {
         Map<String, Integer> scopes = new HashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (scopes.containsKey(subject.name())) {
-                    Integer value = scopes.get(subject.name()) + subject.score();
-                    scopes.put(subject.name(), value);
-                } else {
-                    scopes.put(subject.name(), subject.score());
-                }
+                scopes.put(subject.name(),
+                        scopes.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
         return scopes;
@@ -68,10 +64,16 @@ public class AnalyzeByMap {
     public static Label bestSubject(List<Pupil> pupils) {
         Map<String, Integer> scopes = getSubjectsInfo(pupils);
         List<Label> labels = new ArrayList<>();
+        double max = 0;
         for (Map.Entry<String, Integer> entry : scopes.entrySet()) {
             labels.add(new Label(entry.getKey(), entry.getValue()));
+            max = max > entry.getValue() ? max : entry.getValue();
         }
-        labels.sort(Comparator.naturalOrder());
-        return labels.isEmpty() ? null : labels.get(labels.size() - 1);
+        for (Label label : labels) {
+            if (label.score() == max) {
+                return label;
+            }
+        }
+        return null;
     }
 }
