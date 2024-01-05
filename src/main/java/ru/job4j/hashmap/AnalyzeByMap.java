@@ -70,7 +70,7 @@ public class AnalyzeByMap {
             max = max > entry.getValue() ? max : entry.getValue();
         }
         for (Label label : labels) {
-            if (label.score() == max) {
+            if (Double.compare(label.score(), max) == 0) {
                 return label;
             }
         }
