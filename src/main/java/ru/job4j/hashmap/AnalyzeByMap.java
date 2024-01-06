@@ -62,16 +62,20 @@ public class AnalyzeByMap {
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        Map<String, Integer> scopes = getSubjectsInfo(pupils);
-        List<Label> labels = new ArrayList<>();
-        double max = 0;
-        for (Map.Entry<String, Integer> entry : scopes.entrySet()) {
-            labels.add(new Label(entry.getKey(), entry.getValue()));
-            max = max > entry.getValue() ? max : entry.getValue();
+        int max = 0;
+        Map<String, Integer> scopes = new HashMap<>();
+        for (Pupil pupil : pupils) {
+            for (Subject subject : pupil.subjects()) {
+                scopes.put(subject.name(),
+                        scopes.getOrDefault(subject.name(), 0) + subject.score());
+                if (max <  scopes.get(subject.name())) {
+                    max = scopes.get(subject.name());
+                }
+            }
         }
-        for (Label label : labels) {
-            if (Double.compare(label.score(), max) == 0) {
-                return label;
+        for (Map.Entry<String, Integer> scope : scopes.entrySet()) {
+            if (scope.getValue() == max) {
+                return new Label(scope.getKey(), scope.getValue());
             }
         }
         return null;
