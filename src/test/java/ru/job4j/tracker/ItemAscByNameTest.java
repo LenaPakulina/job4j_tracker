@@ -23,13 +23,13 @@ class ItemAscByNameTest {
                 new Item("2")
         );
         List<Item> expected = Arrays.asList(
-                items.get(4),
-                items.get(5),
-                items.get(6),
-                items.get(0),
-                items.get(2),
-                items.get(1),
-                items.get(3)
+                new Item("0"),
+                new Item("1"),
+                new Item("2"),
+                new Item("One"),
+                new Item("Three"),
+                new Item("Two"),
+                new Item("one")
         );
         items.sort(new ItemAscByName());
         assertThat(items).isEqualTo(expected);

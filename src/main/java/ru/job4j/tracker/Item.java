@@ -13,6 +13,23 @@ public class Item {
     public Item() {
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Item item = (Item) obj;
+        return name.equals(item.name);
+    }
+
     public  Item(String name) {
         this.name = name;
     }

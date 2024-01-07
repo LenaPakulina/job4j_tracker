@@ -21,13 +21,13 @@ class ItemDescByNameTest {
                 new Item("2")
         );
         List<Item> expected = Arrays.asList(
-                items.get(3),
-                items.get(1),
-                items.get(2),
-                items.get(0),
-                items.get(6),
-                items.get(5),
-                items.get(4)
+                new Item("one"),
+                new Item("Two"),
+                new Item("Three"),
+                new Item("One"),
+                new Item("2"),
+                new Item("1"),
+                new Item("0")
         );
         items.sort(new ItemDescByName());
         assertThat(items).isEqualTo(expected);
