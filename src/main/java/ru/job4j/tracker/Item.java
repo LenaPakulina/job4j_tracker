@@ -2,6 +2,7 @@ package ru.job4j.tracker;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class Item {
     private LocalDateTime created = LocalDateTime.now();
@@ -53,7 +54,7 @@ public class Item {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(created, id, name);
     }
 
     @Override
