@@ -54,7 +54,7 @@ public class Item {
 
     @Override
     public int hashCode() {
-        return Objects.hash(created, id, name);
+        return Objects.hash(name);
     }
 
     @Override
