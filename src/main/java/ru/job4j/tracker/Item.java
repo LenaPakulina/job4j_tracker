@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Item {
-    private LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now().withNano(0);
     private int id;
     private String name;
     private static final DateTimeFormatter FORMATTER
@@ -43,13 +43,13 @@ public class Item {
         this.name = name;
     }
 
+    public void setCreated(LocalDateTime dt) {
+        this.created = dt;
+    }
+
     @Override
     public String toString() {
-        return "Item{"
-                + "created=" + created.format(FORMATTER)
-                + ", id=" + id
-                + ", name='" + name + '\''
-                + '}';
+        return String.format("id: %s, name: %s, created: %s", id, name, FORMATTER.format(created));
     }
 
     @Override
