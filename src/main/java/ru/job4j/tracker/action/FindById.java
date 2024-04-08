@@ -23,7 +23,7 @@ public class FindById implements UserAction {
         int id = input.askInt("Введите id: ");
         Item item = memTracker.findById(id);
         if (item != null) {
-            output.println(item);
+            output.println("Заявка с введенным id: " + id + " найдена.");
         } else {
             output.println("Заявка с введенным id: " + id + " не найдена.");
         }

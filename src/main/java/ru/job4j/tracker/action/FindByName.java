@@ -26,7 +26,7 @@ public class FindByName implements UserAction {
         List<Item> items = memTracker.findByName(name);
         if (!items.isEmpty()) {
             for (Item item : items) {
-                output.println(item);
+                output.println("Заявки с именем: " + name + " найдены.");
             }
         } else {
             output.println("Заявки с именем: " + name + " не найдены.");
