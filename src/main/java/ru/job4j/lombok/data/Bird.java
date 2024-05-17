@@ -1,4 +1,4 @@
-package ru.job4j.lombok;
+package ru.job4j.lombok.data;
 
 import java.util.Objects;
 
