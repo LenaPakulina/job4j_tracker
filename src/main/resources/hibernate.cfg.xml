@@ -13,9 +13,9 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
-        <mapping class="ru.job4j.hibernate.Item" />
         <mapping class="ru.job4j.hibernate.connection.Role" />
         <mapping class="ru.job4j.hibernate.connection.User" />
         <mapping class="ru.job4j.hibernate.connection.UserMessenger"/>
+        <mapping class="ru.job4j.hibernate.connection.Item"/>
     </session-factory>
 </hibernate-configuration>
