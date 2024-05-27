@@ -94,7 +94,7 @@ public class HbmTracker implements Store, AutoCloseable {
         List<Item> list = new LinkedList<>();
         try {
             session.beginTransaction();
-            list = session.createQuery("from Item where name = :fKey", Item.class)
+            list = session.createQuery("from Item WHERE name LIKE :fKey", Item.class)
                     .setParameter("fKey", "%" + key + "%")
                     .getResultList();
             session.getTransaction().commit();
